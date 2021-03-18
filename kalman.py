@@ -11,8 +11,6 @@ class KalmanFilter(object):
         initial_est_error: float = random(),
         initial_measure_error: float = random(),
         sensor_values: list = [],
-        delta: float = 0.01,
-        delta_hat: float = 0.0,
         logging: bool = False,
         plotting: bool = False,
     ):
@@ -35,7 +33,6 @@ class KalmanFilter(object):
     def update_estimate(self, sensor_value: int = 0.0) -> None:
         """updates estimate based on Kalman gain"""
         new_estimate = self.estimate + self.gain * (sensor_value - self.estimate)
-        self.delta_hat = abs(new_estimate - self.estimate)
         self.estimate = new_estimate
 
     def calculate_estimate_error(self) -> None:

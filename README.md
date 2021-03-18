@@ -9,3 +9,5 @@ Simply run:
 python kalman.py
 ```
 to get started. A plot should be generated with sensor and predicted values. The true value (assumed to be unknown) is 72. 
+
+![plot](./assets/kalman.png)
